@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Teachers</title>
+</head>
+<body>
+    <h1>Список викладачів</h1>
+
+    {% for teacher in teachers %}
+        <div>
+            <p>Ім'я: {{ teacher.first_name }}</p>
+            <p>Прізвище: {{ teacher.last_name }}</p>
+            <p>Email: {{ teacher.email }}</p>
+            <p>Телефон: {{ teacher.phone }}</p>
+            <p>Дата народження: {{ teacher.date_of_birth }}</p>
+            <p>Користувач: {{ teacher.user }}</p>
+            <hr>
+        </div>
+    {% empty %}
+        <p>Викладачів немає.</p>
+    {% endfor %}
+</body>
+</html>

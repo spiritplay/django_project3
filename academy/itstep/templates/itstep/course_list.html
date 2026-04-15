@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Courses</title>
+</head>
+<body>
+    <h1>Список курсів</h1>
+
+    {% for course in courses %}
+        <div>
+            <p>Назва: {{ course.name }}</p>
+            <p>Опис: {{ course.description }}</p>
+            <p>Викладач: {{ course.teacher }}</p>
+            <p>Початок: {{ course.start }}</p>
+            <p>Закінчення: {{ course.end }}</p>
+            <hr>
+        </div>
+    {% empty %}
+        <p>Курсів немає.</p>
+    {% endfor %}
+</body>
+</html>

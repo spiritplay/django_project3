@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+</head>
+<body>
+    <h1>Список студентів</h1>
+
+    {% for student in students %}
+        <div>
+            <p>Ім'я: {{ student.first_name }}</p>
+            <p>Прізвище: {{ student.last_name }}</p>
+            <p>Email: {{ student.email }}</p>
+            <p>Телефон: {{ student.phone }}</p>
+            <p>Соцмережа: {{ student.url }}</p>
+            <p>Дата народження: {{ student.date_of_birth }}</p>
+            <p>Курси:</p>
+            <ul>
+                {% for course in student.courses.all %}
+                    <li>{{ course.name }}</li>
+                {% empty %}
+                    <li>Немає курсів</li>
+                {% endfor %}
+            </ul>
+            <hr>
+        </div>
+    {% empty %}
+        <p>Студентів немає.</p>
+    {% endfor %}
+</body>
+</html>
